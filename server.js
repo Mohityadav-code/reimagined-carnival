@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -54,8 +54,10 @@ app.get("/get_data", async (req, res) => {
 });
 
 app.post("/send_data", async (req, res) => {
-    const request = req.body;
-    const updatedArray = request.map((item) => {
+    const request = req.body.data;
+    console.log(request);
+    const updatedArray = request.map((item, index) => {
+        if (index === 0) return;
         return parseData(item);
     })
     const data = new Model({
