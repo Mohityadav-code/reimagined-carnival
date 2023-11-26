@@ -8,7 +8,7 @@ const port = 5500;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://vs:vUT02El6bo6jnZzH@project-z.n0ck4xa.mongodb.net/db", {
+mongoose.connect("mongodb+srv://vs:########################db.net/db", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
